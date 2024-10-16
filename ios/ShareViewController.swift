@@ -14,24 +14,25 @@ import UIKit
 import Social
 import RNShareMenu
 
-// This class is available in iOS application extensions, but not anywhere
-// else. This allows us to use UIApplication.shared below.
+// This allows us to use UIApplication.shared below without getting a build
+// error, though it's not clear *why* it works because this class is being
+// used in an application extension
 @available(iOSApplicationExtension, unavailable)
 
 class ShareViewController: SLComposeServiceViewController {
   var hostAppId: String?
   var hostAppUrlScheme: String?
   var sharedItems: [Any] = []
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     if let hostAppId = Bundle.main.object(forInfoDictionaryKey: HOST_APP_IDENTIFIER_INFO_PLIST_KEY) as? String {
       self.hostAppId = hostAppId
     } else {
       print("Error: \(NO_INFO_PLIST_INDENTIFIER_ERROR)")
     }
-    
+
     if let hostAppUrlScheme = Bundle.main.object(forInfoDictionaryKey: HOST_URL_SCHEME_INFO_PLIST_KEY) as? String {
       self.hostAppUrlScheme = hostAppUrlScheme
     } else {
@@ -39,25 +40,25 @@ class ShareViewController: SLComposeServiceViewController {
     }
   }
 
-    override func isContentValid() -> Bool {
-        // Do validation of contentText and/or NSExtensionContext attachments here
-        return true
+  override func isContentValid() -> Bool {
+    // Do validation of contentText and/or NSExtensionContext attachments here
+    return true
+  }
+
+  override func didSelectPost() {
+    // This is called after the user selects Post. Do the upload of contentText and/or NSExtensionContext attachments.
+    guard let items = extensionContext?.inputItems as? [NSExtensionItem] else {
+      cancelRequest()
+      return
     }
 
-    override func didSelectPost() {
-        // This is called after the user selects Post. Do the upload of contentText and/or NSExtensionContext attachments.
-      guard let items = extensionContext?.inputItems as? [NSExtensionItem] else {
-        cancelRequest()
-        return
-      }
+    handlePost(items)
+  }
 
-      handlePost(items)
-    }
-
-    override func configurationItems() -> [Any]! {
-        // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
-        return []
-    }
+  override func configurationItems() -> [Any]! {
+    // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
+    return []
+  }
 
   func handlePost(_ items: [NSExtensionItem], extraData: [String:Any]? = nil) {
     DispatchQueue.global().async {
@@ -131,7 +132,7 @@ class ShareViewController: SLComposeServiceViewController {
     userDefaults.removeObject(forKey: USER_DEFAULTS_EXTRA_DATA_KEY)
     userDefaults.synchronize()
   }
-  
+
   func storeText(withProvider provider: NSItemProvider, _ semaphore: DispatchSemaphore) {
     provider.loadItem(forTypeIdentifier: kUTTypeText as String, options: nil) { (data, error) in
       guard (error == nil) else {
@@ -147,7 +148,7 @@ class ShareViewController: SLComposeServiceViewController {
       semaphore.signal()
     }
   }
-  
+
   func storeUrl(withProvider provider: NSItemProvider, _ semaphore: DispatchSemaphore) {
     provider.loadItem(forTypeIdentifier: kUTTypeURL as String, options: nil) { (data, error) in
       guard (error == nil) else {
@@ -163,7 +164,7 @@ class ShareViewController: SLComposeServiceViewController {
       semaphore.signal()
     }
   }
-  
+
   func storeFile(withProvider provider: NSItemProvider, _ semaphore: DispatchSemaphore) {
     provider.loadItem(forTypeIdentifier: kUTTypeData as String, options: nil) { (data, error) in
       guard (error == nil) else {
@@ -214,7 +215,7 @@ class ShareViewController: SLComposeServiceViewController {
     
     return true
   }
-  
+
   func exit(withError error: String) {
     print("Error: \(error)")
     cancelRequest()
@@ -227,20 +228,20 @@ class ShareViewController: SLComposeServiceViewController {
       exit(withError: NO_INFO_PLIST_URL_SCHEME_ERROR)
       return
     }
-    
+
     guard let url = URL(string: urlScheme) else {
       exit(withError: NO_INFO_PLIST_URL_SCHEME_ERROR)
       return
     }
-    
+
     UIApplication.shared.open(url, options: [:], completionHandler: completeRequest)
   }
-  
+
   func completeRequest(success: Bool) {
     // Inform the host that we're done, so it un-blocks its UI. Note: Alternatively you could call super's -didSelectPost, which will similarly complete the extension context.
     extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
   }
-  
+
   func cancelRequest() {
     extensionContext!.cancelRequest(withError: NSError())
   }
