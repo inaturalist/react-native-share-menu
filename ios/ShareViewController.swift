@@ -40,25 +40,10 @@ class ShareViewController: SLComposeServiceViewController {
     }
   }
 
-    override func isContentValid() -> Bool {
-      // Do validation of contentText and/or NSExtensionContext attachments here
-      return true
-    }
-
-    override func didSelectPost() {
-        // This is called after the user selects Post. Do the upload of contentText and/or NSExtensionContext attachments.
-      guard let items = extensionContext?.inputItems as? [NSExtensionItem] else {
-        cancelRequest()
-        return
-      }
-
-      if (contentText != nil && contentText != "") {
-        let extraData: [String: Any] = ["userInput": contentText as String]
-        handlePost(items, extraData: extraData)
-      } else {
-        handlePost(items)
-      }
-    }
+  override func isContentValid() -> Bool {
+    // Do validation of contentText and/or NSExtensionContext attachments here
+    return true
+  }
 
   override func didSelectPost() {
     // This is called after the user selects Post. Do the upload of contentText and/or NSExtensionContext attachments.
@@ -67,7 +52,12 @@ class ShareViewController: SLComposeServiceViewController {
       return
     }
 
-    handlePost(items)
+    if (contentText != nil && contentText != "") {
+      let extraData: [String: Any] = ["userInput": contentText as String]
+      handlePost(items, extraData: extraData)
+    } else {
+      handlePost(items)
+    }
   }
 
   override func configurationItems() -> [Any]! {
