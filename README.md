@@ -49,7 +49,7 @@ type SharedItem = {
   extraData: any,
 };
 
-const Test = () => {
+const ShareMenuExample = () => {
   const [sharedData, setSharedData] = useState(null);
   const [sharedMimeType, setSharedMimeType] = useState(null);
 
@@ -159,7 +159,7 @@ const Share = () => {
   );
 };
 
-AppRegistry.registerComponent("Test", () => Test);
+AppRegistry.registerComponent("ShareMenuExample", () => ShareMenuExample);
 AppRegistry.registerComponent("ShareMenuModuleComponent", () => Share);
 ```
 
