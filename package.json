@@ -54,7 +54,7 @@
   },
   "homepage": "https://github.com/meedan/react-native-share-menu",
   "license": "MIT",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
