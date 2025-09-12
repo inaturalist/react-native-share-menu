@@ -21,7 +21,7 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>HostAppBundleIdentifier</key>
-	<string>com.github.meedaan.ReactNativeShareMenuExample</string>
+	<string>org.inaturalist.ShareMenuExample</string>
 	<key>HostAppURLScheme</key>
 	<string>ShareMenuModule://</string>
 	<key>NSAppTransportSecurity</key>
