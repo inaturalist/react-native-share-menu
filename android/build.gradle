@@ -15,6 +15,10 @@ def isNewArchitectureEnabled() {
 
 apply plugin: 'com.android.library'
 
+if (isNewArchitectureEnabled()) {
+  apply plugin: 'com.facebook.react'
+}
+
 android {
     compileSdkVersion safeExtGet('compileSdkVersion', rnsmDefaultCompileSdkVersion)
 
