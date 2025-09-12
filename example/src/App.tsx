@@ -52,7 +52,7 @@ export default function App(): React.JSX.Element {
         Shared text: {sharedMimeType === 'text/plain' ? sharedData : ''}
       </Text>
       <Text style={styles.instructions}>Shared image:</Text>
-      {sharedMimeType.startsWith('image/') && (
+      {sharedMimeType?.startsWith('image/') && (
         <Image
           style={styles.image}
           source={{ uri: sharedData }}
@@ -61,7 +61,8 @@ export default function App(): React.JSX.Element {
       )}
       <Text style={styles.instructions}>
         Shared file:{' '}
-        {sharedMimeType !== 'text/plain' && !sharedMimeType.startsWith('image/')
+        {sharedMimeType !== 'text/plain' &&
+        !sharedMimeType?.startsWith('image/')
           ? sharedData
           : ''}
       </Text>
