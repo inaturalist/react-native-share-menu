@@ -1082,7 +1082,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.inaturalist.ReactNativeShareMenuExample;
+				PRODUCT_BUNDLE_IDENTIFIER = org.inaturalist.ShareMenuExample;
 				PRODUCT_NAME = Test;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1380,7 +1380,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.inaturalist.ReactNativeShareMenuExample.ShareExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = org.inaturalist.ShareMenuExample.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ShareExtension/ShareExtension-Bridging-Header.h";
