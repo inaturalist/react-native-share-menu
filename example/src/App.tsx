@@ -5,26 +5,27 @@
  * @format
  * @flow strict-local
  */
-import React, {useState, useEffect, useCallback} from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import React, { useState, useEffect, useCallback } from 'react';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import ShareMenu from 'react-native-share-menu';
 
 type SharedItem = {
-  mimeType: string,
-  data: string,
+  mimeType: string;
+  data: string;
+  extraData: any;
 };
 
-const App: () => React$Node = () => {
+export default function App(): React.JSX.Element {
   const [sharedData, setSharedData] = useState('');
   const [sharedMimeType, setSharedMimeType] = useState('');
   const [sharedExtraData, setSharedExtraData] = useState(null);
 
-  const handleShare = useCallback((item: ?SharedItem) => {
+  const handleShare = useCallback((item: SharedItem) => {
     if (!item) {
       return;
     }
 
-    const {mimeType, data, extraData} = item;
+    const { mimeType, data, extraData } = item;
 
     setSharedData(data);
     setSharedExtraData(extraData);
@@ -33,7 +34,7 @@ const App: () => React$Node = () => {
 
   useEffect(() => {
     ShareMenu.getInitialShare(handleShare);
-  }, []);
+  }, [handleShare]);
 
   useEffect(() => {
     const listener = ShareMenu.addNewShareListener(handleShare);
@@ -41,7 +42,7 @@ const App: () => React$Node = () => {
     return () => {
       listener.remove();
     };
-  }, []);
+  }, [handleShare]);
 
   return (
     <View style={styles.container}>
@@ -54,7 +55,7 @@ const App: () => React$Node = () => {
       {sharedMimeType.startsWith('image/') && (
         <Image
           style={styles.image}
-          source={{uri: sharedData}}
+          source={{ uri: sharedData }}
           resizeMode="contain"
         />
       )}
@@ -69,7 +70,7 @@ const App: () => React$Node = () => {
       </Text>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -93,5 +94,3 @@ const styles = StyleSheet.create({
     height: 200,
   },
 });
-
-export default App;
