@@ -28,19 +28,14 @@ def getExtOrIntegerDefault(name) {
 }
 
 android {
-
-    defaultConfig {
-        minSdkVersion safeExtGet('minSdkVersion', rnsmDefaultCompileSdkVersion)
-        targetSdkVersion safeExtGet('targetSdkVersion', rnsmDefaultCompileSdkVersion)
-        versionCode 1
-        versionName "1.0"
-        ndk {
-            abiFilters "armeabi-v7a", "x86"
-        }
-    }
     lintOptions {
        warning 'InvalidPackage'
   compileSdkVersion getExtOrIntegerDefault("compileSdkVersion")
+  defaultConfig {
+    minSdkVersion getExtOrIntegerDefault("minSdkVersion")
+    targetSdkVersion getExtOrIntegerDefault("targetSdkVersion")
+    buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
+  }
     }
 }
 
