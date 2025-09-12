@@ -15,9 +15,9 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* ShareMenuExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ShareMenuExampleTests.m */; };
-		4955A7B06D31AC73B43BEBCC /* libPods-Test-ShareMenuExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95618C355D2DB42F420DA78D /* libPods-Test-ShareMenuExampleTests.a */; };
+		4955A7B06D31AC73B43BEBCC /* libPods-ShareMenuExample-ShareMenuExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95618C355D2DB42F420DA78D /* libPods-ShareMenuExample-ShareMenuExampleTests.a */; };
 		71BFBD702223932E83C8BFBB /* libPods-ShareExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD99CD08BBCD42B0C176CE5 /* libPods-ShareExtension.a */; };
-		81332743FB53F055D149FC90 /* libPods-Test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0CB55826AB16A7E69D9271 /* libPods-Test.a */; };
+		81332743FB53F055D149FC90 /* libPods-ShareMenuExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0CB55826AB16A7E69D9271 /* libPods-ShareMenuExample.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A000E87224D18BA600A3F5E1 /* ReactShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000E87124D18BA600A3F5E1 /* ReactShareViewController.swift */; };
 		A05E9B1F24CD9F670028C21E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05E9B1D24CD9F670028C21E /* MainInterface.storyboard */; };
@@ -31,7 +31,7 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = Test;
+			remoteInfo = ShareMenuExample;
 		};
 		A05E9B2124CD9F670028C21E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -61,18 +61,18 @@
 		00E356EE1AD99517003FC87E /* ShareMenuExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShareMenuExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ShareMenuExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareMenuExampleTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Test/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Test/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Test/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Test/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Test/main.m; sourceTree = "<group>"; };
-		2A3724AC6BEE782E8D35C6C3 /* Pods-Test-ShareMenuExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test-ShareMenuExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-Test-ShareMenuExampleTests/Pods-Test-ShareMenuExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
-		7B0CB55826AB16A7E69D9271 /* libPods-Test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D4CFF539FCA38DEC9BB7EB6 /* Pods-Test-ShareMenuExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test-ShareMenuExampleTests.release.xcconfig"; path = "Target Support Files/Pods-Test-ShareMenuExampleTests/Pods-Test-ShareMenuExampleTests.release.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Test/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		82BBD7B52C32C6C87D5ACB76 /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.debug.xcconfig"; path = "Target Support Files/Pods-Test/Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
-		95618C355D2DB42F420DA78D /* libPods-Test-ShareMenuExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test-ShareMenuExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* ShareMenuExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareMenuExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ShareMenuExample/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ShareMenuExample/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ShareMenuExample/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ShareMenuExample/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ShareMenuExample/main.m; sourceTree = "<group>"; };
+		2A3724AC6BEE782E8D35C6C3 /* Pods-ShareMenuExample-ShareMenuExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareMenuExample-ShareMenuExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-ShareMenuExample-ShareMenuExampleTests/Pods-ShareMenuExample-ShareMenuExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7B0CB55826AB16A7E69D9271 /* libPods-ShareMenuExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShareMenuExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D4CFF539FCA38DEC9BB7EB6 /* Pods-ShareMenuExample-ShareMenuExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareMenuExample-ShareMenuExampleTests.release.xcconfig"; path = "Target Support Files/Pods-ShareMenuExample-ShareMenuExampleTests/Pods-ShareMenuExample-ShareMenuExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ShareMenuExample/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		82BBD7B52C32C6C87D5ACB76 /* Pods-ShareMenuExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareMenuExample.debug.xcconfig"; path = "Target Support Files/Pods-ShareMenuExample/Pods-ShareMenuExample.debug.xcconfig"; sourceTree = "<group>"; };
+		95618C355D2DB42F420DA78D /* libPods-ShareMenuExample-ShareMenuExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShareMenuExample-ShareMenuExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A000E87124D18BA600A3F5E1 /* ReactShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReactShareViewController.swift; path = ../../../ios/ReactShareViewController.swift; sourceTree = "<group>"; };
 		A05E9B1924CD9F670028C21E /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05E9B1E24CD9F670028C21E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		A05E9B2724CD9F6D0028C21E /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
 		A05E9B2A24CDA0D00028C21E /* libreact-native-share-menu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-share-menu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05E9B3824CDEA470028C21E /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareViewController.swift; path = ../../../ios/ShareViewController.swift; sourceTree = "<group>"; };
-		A090471424CD8E0400386AD9 /* Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Test.entitlements; path = Test/Test.entitlements; sourceTree = "<group>"; };
+		A090471424CD8E0400386AD9 /* ShareMenuExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ShareMenuExample.entitlements; path = ShareMenuExample/ShareMenuExample.entitlements; sourceTree = "<group>"; };
 		A090471A24CD9BEF00386AD9 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		A0F0671024D0C55600187EC9 /* ShareExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShareExtension-Bridging-Header.h"; sourceTree = "<group>"; };
 		A0F0671324D0CB3A00187EC9 /* libCocoaAsyncSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCocoaAsyncSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,7 +147,7 @@
 		A0F0677E24D0CC2F00187EC9 /* libYoga.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libYoga.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F0677F24D0CC2F00187EC9 /* libYogaKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libYogaKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC851DE6AB51B8958256CBE /* Pods-ShareExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareExtension.debug.xcconfig"; path = "Target Support Files/Pods-ShareExtension/Pods-ShareExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		CA296968DC9D087C2839238E /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.release.xcconfig"; path = "Target Support Files/Pods-Test/Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
+		CA296968DC9D087C2839238E /* Pods-ShareMenuExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareMenuExample.release.xcconfig"; path = "Target Support Files/Pods-ShareMenuExample/Pods-ShareMenuExample.release.xcconfig"; sourceTree = "<group>"; };
 		DAD99CD08BBCD42B0C176CE5 /* libPods-ShareExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShareExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E399BCCE5BAB8A38BEC63852 /* Pods-ShareExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareExtension.release.xcconfig"; path = "Target Support Files/Pods-ShareExtension/Pods-ShareExtension.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -159,7 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4955A7B06D31AC73B43BEBCC /* libPods-Test-ShareMenuExampleTests.a in Frameworks */,
+				4955A7B06D31AC73B43BEBCC /* libPods-ShareMenuExample-ShareMenuExampleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81332743FB53F055D149FC90 /* libPods-Test.a in Frameworks */,
+				81332743FB53F055D149FC90 /* libPods-ShareMenuExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,10 +199,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* Test */ = {
+		13B07FAE1A68108700A75B9A /* ShareMenuExample */ = {
 			isa = PBXGroup;
 			children = (
-				A090471424CD8E0400386AD9 /* Test.entitlements */,
+				A090471424CD8E0400386AD9 /* ShareMenuExample.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -211,7 +211,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = Test;
+			name = ShareMenuExample;
 			sourceTree = "<group>";
 		};
 		1F4EAAE889FD22EA178511CD /* Pods */ = {
@@ -219,10 +219,10 @@
 			children = (
 				BFC851DE6AB51B8958256CBE /* Pods-ShareExtension.debug.xcconfig */,
 				E399BCCE5BAB8A38BEC63852 /* Pods-ShareExtension.release.xcconfig */,
-				82BBD7B52C32C6C87D5ACB76 /* Pods-Test.debug.xcconfig */,
-				CA296968DC9D087C2839238E /* Pods-Test.release.xcconfig */,
-				2A3724AC6BEE782E8D35C6C3 /* Pods-Test-ShareMenuExampleTests.debug.xcconfig */,
-				7D4CFF539FCA38DEC9BB7EB6 /* Pods-Test-ShareMenuExampleTests.release.xcconfig */,
+				82BBD7B52C32C6C87D5ACB76 /* Pods-ShareMenuExample.debug.xcconfig */,
+				CA296968DC9D087C2839238E /* Pods-ShareMenuExample.release.xcconfig */,
+				2A3724AC6BEE782E8D35C6C3 /* Pods-ShareMenuExample-ShareMenuExampleTests.debug.xcconfig */,
+				7D4CFF539FCA38DEC9BB7EB6 /* Pods-ShareMenuExample-ShareMenuExampleTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -298,8 +298,8 @@
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				DAD99CD08BBCD42B0C176CE5 /* libPods-ShareExtension.a */,
-				7B0CB55826AB16A7E69D9271 /* libPods-Test.a */,
-				95618C355D2DB42F420DA78D /* libPods-Test-ShareMenuExampleTests.a */,
+				7B0CB55826AB16A7E69D9271 /* libPods-ShareMenuExample.a */,
+				95618C355D2DB42F420DA78D /* libPods-ShareMenuExample-ShareMenuExampleTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -314,7 +314,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* Test */,
+				13B07FAE1A68108700A75B9A /* ShareMenuExample */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ShareMenuExampleTests */,
 				A05E9B1A24CD9F670028C21E /* ShareExtension */,
@@ -330,7 +330,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* Test.app */,
+				13B07F961A680F5B00A75B9A /* ShareMenuExample.app */,
 				00E356EE1AD99517003FC87E /* ShareMenuExampleTests.xctest */,
 				A05E9B1924CD9F670028C21E /* ShareExtension.appex */,
 			);
@@ -373,9 +373,9 @@
 			productReference = 00E356EE1AD99517003FC87E /* ShareMenuExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* Test */ = {
+		13B07F861A680F5B00A75B9A /* ShareMenuExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Test" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ShareMenuExample" */;
 			buildPhases = (
 				4840B620A670408152B6207F /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -391,9 +391,9 @@
 			dependencies = (
 				A05E9B2224CD9F670028C21E /* PBXTargetDependency */,
 			);
-			name = Test;
-			productName = Test;
-			productReference = 13B07F961A680F5B00A75B9A /* Test.app */;
+			name = ShareMenuExample;
+			productName = ShareMenuExample;
+			productReference = 13B07F961A680F5B00A75B9A /* ShareMenuExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A05E9B1824CD9F670028C21E /* ShareExtension */ = {
@@ -450,7 +450,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Test" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ShareMenuExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -463,7 +463,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* Test */,
+				13B07F861A680F5B00A75B9A /* ShareMenuExample */,
 				00E356ED1AD99517003FC87E /* ShareMenuExampleTests */,
 				A05E9B1824CD9F670028C21E /* ShareExtension */,
 			);
@@ -596,7 +596,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Test-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ShareMenuExample-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -618,7 +618,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Test-ShareMenuExampleTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ShareMenuExample-ShareMenuExampleTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -631,7 +631,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Test-ShareMenuExampleTests/Pods-Test-ShareMenuExampleTests-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ShareMenuExample-ShareMenuExampleTests/Pods-ShareMenuExample-ShareMenuExampleTests-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -640,7 +640,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Test-ShareMenuExampleTests/Pods-Test-ShareMenuExampleTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShareMenuExample-ShareMenuExampleTests/Pods-ShareMenuExample-ShareMenuExampleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A0CD534224D41C2E0057D341 /* Bundle React Native code and images */ = {
@@ -667,7 +667,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Test/Pods-Test-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ShareMenuExample/Pods-ShareMenuExample-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -676,7 +676,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Test/Pods-Test-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShareMenuExample/Pods-ShareMenuExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -768,7 +768,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* Test */;
+			target = 13B07F861A680F5B00A75B9A /* ShareMenuExample */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		A05E9B2224CD9F670028C21E /* PBXTargetDependency */ = {
@@ -792,7 +792,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A3724AC6BEE782E8D35C6C3 /* Pods-Test-ShareMenuExampleTests.debug.xcconfig */;
+			baseConfigurationReference = 2A3724AC6BEE782E8D35C6C3 /* Pods-ShareMenuExample-ShareMenuExampleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -809,13 +809,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Test.app/Test";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShareMenuExample.app/ShareMenuExample";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D4CFF539FCA38DEC9BB7EB6 /* Pods-Test-ShareMenuExampleTests.release.xcconfig */;
+			baseConfigurationReference = 7D4CFF539FCA38DEC9BB7EB6 /* Pods-ShareMenuExample-ShareMenuExampleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -829,22 +829,22 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Test.app/Test";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShareMenuExample.app/ShareMenuExample";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82BBD7B52C32C6C87D5ACB76 /* Pods-Test.debug.xcconfig */;
+			baseConfigurationReference = 82BBD7B52C32C6C87D5ACB76 /* Pods-ShareMenuExample.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Test/Test.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ShareMenuExample/ShareMenuExample.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9Y6Q2LA85N;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Test/Info.plist;
+				INFOPLIST_FILE = ShareMenuExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -852,7 +852,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.meedaan.ReactNativeShareMenuExample;
-				PRODUCT_NAME = Test;
+				PRODUCT_NAME = ShareMenuExample;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -861,15 +861,15 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA296968DC9D087C2839238E /* Pods-Test.release.xcconfig */;
+			baseConfigurationReference = CA296968DC9D087C2839238E /* Pods-ShareMenuExample.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Test/Test.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ShareMenuExample/ShareMenuExample.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9Y6Q2LA85N;
-				INFOPLIST_FILE = Test/Info.plist;
+				INFOPLIST_FILE = ShareMenuExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -877,7 +877,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.meedaan.ReactNativeShareMenuExample;
-				PRODUCT_NAME = Test;
+				PRODUCT_NAME = ShareMenuExample;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1075,7 +1075,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Test" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ShareMenuExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -1084,7 +1084,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Test" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ShareMenuExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
