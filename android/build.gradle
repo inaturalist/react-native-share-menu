@@ -68,5 +68,6 @@ if (isNewArchitectureEnabled()) {
   react {
     jsRootDir = file("../src/")
     libraryName = "ShareMenu"
+    codegenJavaPackageName = "com.sharemenu"
   }
 }
