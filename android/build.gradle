@@ -28,15 +28,21 @@ def getExtOrIntegerDefault(name) {
 }
 
 android {
-    lintOptions {
-       warning 'InvalidPackage'
   compileSdkVersion getExtOrIntegerDefault("compileSdkVersion")
   defaultConfig {
     minSdkVersion getExtOrIntegerDefault("minSdkVersion")
     targetSdkVersion getExtOrIntegerDefault("targetSdkVersion")
     buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
   }
+  buildTypes {
+    release {
+      minifyEnabled false
     }
+  }
+
+  lintOptions {
+    disable "GradleCompatible"
+  }
 }
 
 repositories {
