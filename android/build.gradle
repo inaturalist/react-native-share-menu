@@ -1,19 +1,19 @@
 buildscript {
   repositories {
-      google()
-      mavenCentral()
+    google()
+    mavenCentral()
   }
 
   dependencies {
-    classpath 'com.android.tools.build:gradle:3.5.3'
+    classpath "com.android.tools.build:gradle:7.2.1"
   }
 }
 
 def isNewArchitectureEnabled() {
-  return rootProject.hasProperty("newArchEnabled") &&  rootProject.getProperty("newArchEnabled") == "true"
+  return rootProject.hasProperty("newArchEnabled") && rootProject.getProperty("newArchEnabled") == "true"
 }
 
-apply plugin: 'com.android.library'
+apply plugin: "com.android.library"
 
 if (isNewArchitectureEnabled()) {
   apply plugin: 'com.facebook.react'
