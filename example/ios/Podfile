@@ -45,8 +45,11 @@ target 'Test' do
 end
 
 target 'ShareExtension' do
-  use_react_native!
-
+  use_react_native!(
+      # to enable hermes on iOS, change `false` to `true` and then install pods
+      hermes_enabled: true
+    )
+    
   pod 'RNShareMenu', :path => '../..'
 end
 
