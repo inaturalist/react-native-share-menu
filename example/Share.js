@@ -4,7 +4,7 @@ import { ShareMenuReactView } from 'react-native-share-menu';
 
 const Button = ({ onPress, title, style }) => (
   <Pressable onPress={onPress}>
-    <Text style={[{ fontSize: 16, margin: 16 }, style]}>{title}</Text>
+    <Text style={[styles.button, style]}>{title}</Text>
   </Pressable>
 );
 
@@ -77,6 +77,10 @@ const Share = () => {
 };
 
 const styles = StyleSheet.create({
+  button: {
+    fontSize: 16,
+    margin: 16,
+  },
   container: {
     flex: 1,
     backgroundColor: 'white',
