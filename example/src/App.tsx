@@ -11,7 +11,12 @@ import ShareMenu from 'react-native-share-menu';
 
 type SharedItem = {
   mimeType: string;
-  data: string;
+  data:
+    | {
+        data: string;
+        mimeType: string;
+      }[]
+    | null;
   extraData: any;
 };
 
