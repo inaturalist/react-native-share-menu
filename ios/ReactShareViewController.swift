@@ -9,6 +9,8 @@
 
 import RNShareMenu
 
+@available(iOSApplicationExtension, unavailable)
+
 class ReactShareViewController: ShareViewController, RCTBridgeDelegate, ReactShareViewDelegate {
   func sourceURL(for bridge: RCTBridge!) -> URL! {
 #if DEBUG
