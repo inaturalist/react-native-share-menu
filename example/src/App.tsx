@@ -35,7 +35,7 @@ export default function App(): React.JSX.Element {
     if (!data) {
       return;
     }
-    // On iOS returned data is an array of items we take the first one as an example
+    // Returned data is an array of items we take the first one as an example
     setSharedData(data[0]?.data);
     setSharedMimeType(data[0]?.mimeType);
   }, []);
