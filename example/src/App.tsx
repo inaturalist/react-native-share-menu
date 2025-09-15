@@ -9,7 +9,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import ShareMenu from 'react-native-share-menu';
 
-type SharedItem = {
+type Share = {
   data:
     | {
         mimeType: string;
@@ -24,7 +24,7 @@ export default function App(): React.JSX.Element {
   const [sharedMimeType, setSharedMimeType] = useState('');
   const [sharedExtraData, setSharedExtraData] = useState<any>(null);
 
-  const handleShare = useCallback((item: SharedItem) => {
+  const handleShare = useCallback((item: Share) => {
     console.log('item', item);
     if (!item) {
       return;
