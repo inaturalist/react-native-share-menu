@@ -25,7 +25,6 @@ export default function App(): React.JSX.Element {
   const [sharedExtraData, setSharedExtraData] = useState<any>(null);
 
   const handleShare = useCallback((item: Share) => {
-    console.log('item', item);
     if (!item) {
       return;
     }
