@@ -6,35 +6,49 @@
  * @flow strict-local
  */
 import React, { useState, useEffect, useCallback } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, Platform } from 'react-native';
 import ShareMenu from 'react-native-share-menu';
 
-type SharedItem = {
+type SharedItemAndroid = {
   mimeType: string;
+  data: string;
+  extraData: string;
+};
+
+type SharedItemiOS = {
   data:
     | {
-        data: string;
         mimeType: string;
+        data: string;
       }[]
     | null;
-  extraData: any;
+  extraData?: any;
 };
 
 export default function App(): React.JSX.Element {
   const [sharedData, setSharedData] = useState('');
   const [sharedMimeType, setSharedMimeType] = useState('');
-  const [sharedExtraData, setSharedExtraData] = useState(null);
+  const [sharedExtraData, setSharedExtraData] = useState<any>(null);
 
-  const handleShare = useCallback((item: SharedItem) => {
+  const handleShare = useCallback((item: SharedItemAndroid | SharedItemiOS) => {
     if (!item) {
       return;
     }
-
-    const { mimeType, data, extraData } = item;
-
-    setSharedData(data);
+    const { extraData } = item;
     setSharedExtraData(extraData);
-    setSharedMimeType(mimeType);
+    if (Platform.OS === 'ios') {
+      const { data } = item as SharedItemiOS;
+      if (!data) {
+        return;
+      }
+      // On iOS returned data is an array of items we take the first one as an example
+      setSharedData(data[0]?.data);
+      setSharedMimeType(data[0]?.mimeType);
+    } else {
+      const { data, mimeType } = item as SharedItemAndroid;
+      setSharedData(data);
+      setSharedMimeType(mimeType);
+    }
   }, []);
 
   useEffect(() => {
