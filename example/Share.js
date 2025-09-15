@@ -44,7 +44,7 @@ const Share = () => {
         />
       </View>
       {sharedMimeType === 'text/plain' && <Text>{sharedData}</Text>}
-      {sharedMimeType.startsWith('image/') && (
+      {sharedMimeType?.startsWith('image/') && (
         <Image
           style={styles.image}
           resizeMode="contain"
