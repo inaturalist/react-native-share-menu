@@ -1,39 +1,52 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-import React, {useState, useEffect, useCallback} from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import React, { useState, useEffect, useCallback } from 'react';
+import { StyleSheet, Text, View, Image, Platform } from 'react-native';
 import ShareMenu from 'react-native-share-menu';
 
-type SharedItem = {
-  mimeType: string,
-  data: string,
+type SharedItemAndroid = {
+  mimeType: string;
+  data: string;
+  extraData: string;
 };
 
-const App: () => React$Node = () => {
+type SharedItemiOS = {
+  data:
+    | {
+        mimeType: string;
+        data: string;
+      }[]
+    | null;
+  extraData?: any;
+};
+
+export default function App(): React.JSX.Element {
   const [sharedData, setSharedData] = useState('');
   const [sharedMimeType, setSharedMimeType] = useState('');
-  const [sharedExtraData, setSharedExtraData] = useState(null);
+  const [sharedExtraData, setSharedExtraData] = useState<any>(null);
 
-  const handleShare = useCallback((item: ?SharedItem) => {
+  const handleShare = useCallback((item: SharedItemAndroid | SharedItemiOS) => {
     if (!item) {
       return;
     }
-
-    const {mimeType, data, extraData} = item;
-
-    setSharedData(data);
+    const { extraData } = item;
     setSharedExtraData(extraData);
-    setSharedMimeType(mimeType);
+    if (Platform.OS === 'ios') {
+      const { data } = item as SharedItemiOS;
+      if (!data) {
+        return;
+      }
+      // On iOS returned data is an array of items we take the first one as an example
+      setSharedData(data[0]?.data);
+      setSharedMimeType(data[0]?.mimeType);
+    } else {
+      const { data, mimeType } = item as SharedItemAndroid;
+      setSharedData(data);
+      setSharedMimeType(mimeType);
+    }
   }, []);
 
   useEffect(() => {
     ShareMenu.getInitialShare(handleShare);
-  }, []);
+  }, [handleShare]);
 
   useEffect(() => {
     const listener = ShareMenu.addNewShareListener(handleShare);
@@ -41,7 +54,7 @@ const App: () => React$Node = () => {
     return () => {
       listener.remove();
     };
-  }, []);
+  }, [handleShare]);
 
   return (
     <View style={styles.container}>
@@ -51,16 +64,17 @@ const App: () => React$Node = () => {
         Shared text: {sharedMimeType === 'text/plain' ? sharedData : ''}
       </Text>
       <Text style={styles.instructions}>Shared image:</Text>
-      {sharedMimeType.startsWith('image/') && (
+      {sharedMimeType?.startsWith('image/') && (
         <Image
           style={styles.image}
-          source={{uri: sharedData}}
+          source={{ uri: sharedData }}
           resizeMode="contain"
         />
       )}
       <Text style={styles.instructions}>
         Shared file:{' '}
-        {sharedMimeType !== 'text/plain' && !sharedMimeType.startsWith('image/')
+        {sharedMimeType !== 'text/plain' &&
+        !sharedMimeType?.startsWith('image/')
           ? sharedData
           : ''}
       </Text>
@@ -69,7 +83,7 @@ const App: () => React$Node = () => {
       </Text>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -93,5 +107,3 @@ const styles = StyleSheet.create({
     height: 200,
   },
 });
-
-export default App;

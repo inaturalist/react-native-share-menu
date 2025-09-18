@@ -21,9 +21,22 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>HostAppBundleIdentifier</key>
-	<string>com.github.meedaan.ReactNativeShareMenuExample</string>
+	<string>org.inaturalist.ShareMenuExample</string>
 	<key>HostAppURLScheme</key>
 	<string>ShareMenuModule://</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>localhost</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
@@ -32,9 +45,9 @@
 			<dict>
 				<key>NSExtensionActivationSupportsFileWithMaxCount</key>
 				<integer>1</integer>
-				<key>NSExtensionActivationSupportsMovieWithMaxCount</key>
-				<integer>1</integer>
 				<key>NSExtensionActivationSupportsImageWithMaxCount</key>
+				<integer>2</integer>
+				<key>NSExtensionActivationSupportsMovieWithMaxCount</key>
 				<integer>1</integer>
 				<key>NSExtensionActivationSupportsText</key>
 				<true/>
@@ -49,29 +62,16 @@
 	</dict>
 	<key>ReactShareViewBackgroundColor</key>
 	<dict>
-		<key>Red</key>
-		<integer>1</integer>
-		<key>Green</key>
+		<key>Alpha</key>
 		<integer>1</integer>
 		<key>Blue</key>
 		<integer>1</integer>
-		<key>Alpha</key>
+		<key>Green</key>
+		<integer>1</integer>
+		<key>Red</key>
 		<integer>1</integer>
 		<key>Transparent</key>
 		<false/>
-	</dict>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>localhost</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-			</dict>
-		</dict>
 	</dict>
 </dict>
 </plist>
