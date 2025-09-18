@@ -17,7 +17,7 @@ export default function App(): React.JSX.Element {
   const [sharedMimeType, setSharedMimeType] = useState('');
   const [sharedExtraData, setSharedExtraData] = useState<any>(null);
 
-  const handleShare = useCallback((item: Share) => {
+  const handleShare = useCallback((item?: Share | null) => {
     if (!item) {
       return;
     }
