@@ -1,10 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
 import React, { useState, useEffect, useCallback } from 'react';
 import { StyleSheet, Text, View, Image, Platform } from 'react-native';
 import ShareMenu from 'react-native-share-menu';
