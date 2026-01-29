@@ -13,8 +13,8 @@ type Share = {
 };
 
 export default function App(): React.JSX.Element {
-  const [sharedData, setSharedData] = useState('');
-  const [sharedMimeType, setSharedMimeType] = useState('');
+  const [sharedData, setSharedData] = useState<string | undefined>('');
+  const [sharedMimeType, setSharedMimeType] = useState<string | undefined>('');
   const [sharedExtraData, setSharedExtraData] = useState<any>(null);
 
   const handleShare = useCallback((item?: Share | null) => {
