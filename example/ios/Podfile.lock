@@ -2321,7 +2321,7 @@ PODS:
     - React-perflogger (= 0.82.1)
     - React-utils (= 0.82.1)
     - SocketRocket
-  - RNShareMenu (6.0.0):
+  - RNShareMenu (7.0.0):
     - boost
     - DoubleConversion
     - fast_float
@@ -2658,7 +2658,7 @@ SPEC CHECKSUMS:
   ReactAppDependencyProvider: a45ef34bb22dc1c9b2ac1f74167d9a28af961176
   ReactCodegen: 0bce2d209e2e802589f4c5ff76d21618200e74cb
   ReactCommon: 801eff8cb9c940c04d3a89ce399c343ee3eff654
-  RNShareMenu: 8871da57c9d3ed2b94d30c784d6f67d062e3b016
+  RNShareMenu: 78f262aa1bfa94c1f5acfdcf40d1de4aa79385df
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: 526f25666395d30c297d53154398ffd249eaf9e1
 
