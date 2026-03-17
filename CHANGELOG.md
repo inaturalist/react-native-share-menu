@@ -19,6 +19,9 @@ for any bug fixes.
 in case of vulnerabilities.
 
 ## [Unreleased] - YYYY-MM-DD
+## [7.1.0] - 2026-03-17
+### Added
+- Opt-in mode of auto-continue to immediately open the app without any UI
 ## [7.0.0] - 2026-03-17
 ### Removed
 - Support for the react-native legacy Architecture
