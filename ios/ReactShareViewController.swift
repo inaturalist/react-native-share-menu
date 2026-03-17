@@ -39,37 +39,8 @@ class ReactShareViewController: ShareViewController, ReactShareViewDelegate {
     return RCTReactNativeFactory(delegate: reactNativeFactoryDelegate)
   }()
 
-  private var didAutoContinueInApp = false
-
-  private var isAutoContinueInAppEnabled: Bool {
-    // Opt-in: bypass extension UI and immediately forward to the host app.
-    return (Bundle.main.object(forInfoDictionaryKey: SHARE_MENU_AUTO_CONTINUE_IN_APP_KEY) as? Bool) == true
-  }
-
-  private func autoContinueInAppIfNeeded() {
-    // Run once per presentation to avoid duplicate writes/opens.
-    guard isAutoContinueInAppEnabled, !didAutoContinueInApp else { return }
-    didAutoContinueInApp = true
-
-    guard let items = extensionContext?.inputItems as? [NSExtensionItem] else {
-      cancelRequest()
-      return
-    }
-
-    handlePost(items)
-  }
-
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    if isAutoContinueInAppEnabled {
-      // Keep the extension visually blank to avoid any UI flash during the handoff.
-      let blankView = UIView()
-      blankView.backgroundColor = .clear
-      blankView.alpha = 0
-      self.view = blankView
-      return
-    }
 
     let rootView = reactNativeFactory.rootViewFactory.view(
       withModuleName: "ShareMenuModuleComponent",
@@ -97,17 +68,7 @@ class ReactShareViewController: ShareViewController, ReactShareViewDelegate {
     ShareMenuReactView.attachViewDelegate(self)
   }
 
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    // Trigger before the extension becomes visible on screen.
-    autoContinueInAppIfNeeded()
-  }
-
   override func viewDidDisappear(_ animated: Bool) {
-    if isAutoContinueInAppEnabled {
-      return
-    }
-
     cancel()
     ShareMenuReactView.detachViewDelegate()
   }
