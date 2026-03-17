@@ -33,6 +33,9 @@ public let URL_SCHEME_INFO_PLIST_KEY = "AppURLScheme"
 public let HOST_APP_IDENTIFIER_INFO_PLIST_KEY = "HostAppBundleIdentifier"
 public let HOST_URL_SCHEME_INFO_PLIST_KEY = "HostAppURLScheme"
 
+// Share Extension opt-in behaviors
+public let SHARE_MENU_AUTO_CONTINUE_IN_APP_KEY = "ShareMenuAutoContinueInApp"
+
 public let REACT_SHARE_VIEW_BACKGROUND_COLOR_KEY = "ReactShareViewBackgroundColor"
 public let COLOR_RED_KEY = "Red"
 public let COLOR_GREEN_KEY = "Green"
