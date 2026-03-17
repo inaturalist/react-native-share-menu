@@ -30,7 +30,6 @@ target 'Test' do
         config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'NO'
       end
     end
-    # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
     react_native_post_install(
       installer,
       config[:reactNativePath],
@@ -41,11 +40,14 @@ target 'Test' do
 end
 
 target 'ShareExtension' do
+  config = use_native_modules!
+
   use_react_native!(
-      # to enable hermes on iOS, change `false` to `true` and then install pods
-      hermes_enabled: true
-    )
-    
+    :path => config[:reactNativePath],
+    :app_path => "#{Pod::Config.instance.installation_root}/..",
+    :hermes_enabled => true
+  )
+
   pod 'RNShareMenu', :path => '../..'
 end
 
