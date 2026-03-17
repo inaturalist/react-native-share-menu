@@ -32,6 +32,16 @@ react-native link
 
 ## [Custom iOS Share View (optional)](SHARE_EXTENSION_VIEW.md)
 
+## iOS: No-UI “auto-forward” mode (optional)
+
+If you want the Share Extension to **skip showing the React UI** and immediately forward the shared items into the host app, you can enable an opt-in mode via your **Share Extension** `Info.plist`:
+
+- **Key**: `ShareMenuAutoContinueInApp`
+- **Type**: Boolean
+- **Value**: `YES`
+
+When enabled, the extension will store the items in the App Group (same as the default flow), open the host app using `HostAppURLScheme`, and then complete the extension request. This requires **no host-app code changes** as long as sharing into the app already works with `react-native-share-menu`.
+
 ## [API Docs](API_DOCS.md)
 
 ## [Example Project](example/)
