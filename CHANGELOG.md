@@ -19,7 +19,7 @@ for any bug fixes.
 in case of vulnerabilities.
 
 ## [Unreleased] - YYYY-MM-DD
-## [7.1.2] - 2026-03-17
+## [7.1.3] - 2026-03-17
 ### Added
 - Opt-in mode of auto-continue to immediately open the app without any UI
 ### Changed
