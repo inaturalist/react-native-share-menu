@@ -42,9 +42,12 @@
     "lint": "eslint",
     "prepare": "bob build",
     "release": "release-it",
-    "example": "yarn --cwd example",
-    "bootstrap": "yarn example && yarn install && yarn example pods"
+    "example": "yarn workspace example"
   },
+  "workspaces": [
+    "example"
+  ],
+  "packageManager": "yarn@4.12.0",
   "keywords": [
     "react-component",
     "react-native",
@@ -65,15 +68,15 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.4.1",
+    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/js": "^9.39.2",
     "@react-native/babel-preset": "0.83.9",
     "@react-native/eslint-config": "0.83.9",
     "@react-native/typescript-config": "0.83.9",
     "@release-it/conventional-changelog": "^9.0.2",
     "@types/jest": "^29.5.13",
     "@types/react": "^19.2.0",
-    "@eslint/compat": "^1.4.1",
-    "@eslint/eslintrc": "^3.3.3",
-    "@eslint/js": "^9.39.2",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-ft-flow": "^3.0.11",
