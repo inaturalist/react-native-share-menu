@@ -7,19 +7,6 @@ const root = path.resolve(__dirname, '..');
 module.exports = getConfig(
   {
     presets: ['module:@react-native/babel-preset'],
-    plugins: [
-      // TODO: drop once the workspace conversion gives us a real
-      // node_modules/react-native-share-menu symlink.
-      [
-        'module-resolver',
-        {
-          extensions: ['.tsx', '.ts', '.js', '.json'],
-          alias: {
-            [pak.name]: path.join(__dirname, '..', pak.source),
-          },
-        },
-      ],
-    ],
   },
   { root, pkg: pak },
 );
