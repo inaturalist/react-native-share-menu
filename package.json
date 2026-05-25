@@ -42,7 +42,11 @@
     "lint": "eslint",
     "prepare": "bob build",
     "release": "release-it",
-    "example": "yarn workspace example"
+    "example": "yarn workspace example",
+    "start": "yarn example start --reset-cache",
+    "ios": "yarn example ios",
+    "android": "yarn example android",
+    "pods": "yarn example pods"
   },
   "workspaces": [
     "example"
