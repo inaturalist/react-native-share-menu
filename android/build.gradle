@@ -28,6 +28,8 @@ def getExtOrIntegerDefault(name) {
 }
 
 android {
+  namespace "com.meedan"
+
   compileSdkVersion getExtOrIntegerDefault("compileSdkVersion")
   defaultConfig {
     minSdkVersion getExtOrIntegerDefault("minSdkVersion")
