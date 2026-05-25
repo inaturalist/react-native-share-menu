@@ -34,7 +34,7 @@ export default {
   addNewShareListener(callback: (event: any) => void) {
     const subscription = EventEmitter.addListener(
       NEW_SHARE_EVENT_NAME,
-      callback
+      callback,
     );
 
     return subscription;
