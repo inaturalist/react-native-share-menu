@@ -81,13 +81,6 @@
     "react": ">=19.1.0",
     "react-native": ">=0.81.0"
   },
-  "jest": {
-    "preset": "react-native",
-    "modulePathIgnorePatterns": [
-      "<rootDir>/example/node_modules",
-      "<rootDir>/lib/"
-    ]
-  },
   "release-it": {
     "git": {
       "commitMessage": "chore: release ${version}",
