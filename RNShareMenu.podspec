@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.swift_version = "5.2"
 
 
-  s.source_files = "ios/**/*.{h,m,mm,swift}"
+  s.source_files = "ios/**/*.{h,m,mm,swift,cpp}"
   s.exclude_files = [
     "ios/ShareViewController.swift",
     "ios/ReactShareViewController.swift",
