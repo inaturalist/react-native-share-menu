@@ -1,39 +1,40 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-import React, {useState, useEffect, useCallback} from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import React, { useState, useEffect, useCallback } from 'react';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import ShareMenu from 'react-native-share-menu';
 
-type SharedItem = {
-  mimeType: string,
-  data: string,
+type Share = {
+  data:
+    | {
+        mimeType: string;
+        data: string;
+      }[]
+    | null;
+  extraData?: any;
 };
 
-const App: () => React$Node = () => {
-  const [sharedData, setSharedData] = useState('');
-  const [sharedMimeType, setSharedMimeType] = useState('');
-  const [sharedExtraData, setSharedExtraData] = useState(null);
+export default function App(): React.JSX.Element {
+  const [sharedData, setSharedData] = useState<string | undefined>('');
+  const [sharedMimeType, setSharedMimeType] = useState<string | undefined>('');
+  const [sharedExtraData, setSharedExtraData] = useState<any>(null);
 
-  const handleShare = useCallback((item: ?SharedItem) => {
+  const handleShare = useCallback((item?: Share | null) => {
     if (!item) {
       return;
     }
-
-    const {mimeType, data, extraData} = item;
-
-    setSharedData(data);
+    const { data, extraData } = item;
     setSharedExtraData(extraData);
-    setSharedMimeType(mimeType);
+
+    if (!data) {
+      return;
+    }
+    // Returned data is an array of items we take the first one as an example
+    setSharedData(data[0]?.data);
+    setSharedMimeType(data[0]?.mimeType);
   }, []);
 
   useEffect(() => {
     ShareMenu.getInitialShare(handleShare);
-  }, []);
+  }, [handleShare]);
 
   useEffect(() => {
     const listener = ShareMenu.addNewShareListener(handleShare);
@@ -41,7 +42,7 @@ const App: () => React$Node = () => {
     return () => {
       listener.remove();
     };
-  }, []);
+  }, [handleShare]);
 
   return (
     <View style={styles.container}>
@@ -51,16 +52,17 @@ const App: () => React$Node = () => {
         Shared text: {sharedMimeType === 'text/plain' ? sharedData : ''}
       </Text>
       <Text style={styles.instructions}>Shared image:</Text>
-      {sharedMimeType.startsWith('image/') && (
+      {sharedMimeType?.startsWith('image/') && (
         <Image
           style={styles.image}
-          source={{uri: sharedData}}
+          source={{ uri: sharedData }}
           resizeMode="contain"
         />
       )}
       <Text style={styles.instructions}>
         Shared file:{' '}
-        {sharedMimeType !== 'text/plain' && !sharedMimeType.startsWith('image/')
+        {sharedMimeType !== 'text/plain' &&
+        !sharedMimeType?.startsWith('image/')
           ? sharedData
           : ''}
       </Text>
@@ -69,7 +71,7 @@ const App: () => React$Node = () => {
       </Text>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -93,5 +95,3 @@ const styles = StyleSheet.create({
     height: 200,
   },
 });
-
-export default App;

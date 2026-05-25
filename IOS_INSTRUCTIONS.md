@@ -24,6 +24,15 @@ On the pop-up, select `node_modules/react-native-share-menu/ios/ShareViewControl
 
 ![Add View Controller](screenshots/Xcode-04.png)
 
+## No-UI auto-forward (optional)
+
+If you want to **skip showing any custom UI** and immediately forward the shared items into your app, add the no-UI controller:
+
+- Add `node_modules/react-native-share-menu/ios/AutoContinueShareViewController.swift` to your Share Extension target (same “Add Files…” flow as above, and do NOT copy items).
+- In `MainInterface.storyboard`, set the initial view controller **Class** to `AutoContinueShareViewController`.
+
+This uses the same App Group + URL scheme handoff as the default flow (no additional host-app changes beyond this guide).
+
 ## Edit Podfile
 
 Make these changes to your Podfile:

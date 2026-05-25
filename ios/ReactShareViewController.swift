@@ -8,25 +8,44 @@
 //
 
 import RNShareMenu
+import UIKit
 
-class ReactShareViewController: ShareViewController, RCTBridgeDelegate, ReactShareViewDelegate {
-  func sourceURL(for bridge: RCTBridge!) -> URL! {
+@available(iOSApplicationExtension, unavailable)
+private final class ShareExtensionReactNativeFactoryDelegate: RCTDefaultReactNativeFactoryDelegate {
+  override func sourceURL(for bridge: RCTBridge!) -> URL! {
 #if DEBUG
-    return RCTBundleURLProvider.sharedSettings()?
+    return RCTBundleURLProvider.sharedSettings()
       .jsBundleURL(forBundleRoot: "index.share")
 #else
     return Bundle.main.url(forResource: "main", withExtension: "jsbundle")
 #endif
   }
 
+  override func bundleURL() -> URL! {
+#if DEBUG
+    return RCTBundleURLProvider.sharedSettings()
+      .jsBundleURL(forBundleRoot: "index.share")
+#else
+    return Bundle.main.url(forResource: "main", withExtension: "jsbundle")
+#endif
+  }
+}
+
+@available(iOSApplicationExtension, unavailable)
+class ReactShareViewController: ShareViewController, ReactShareViewDelegate {
+  private let reactNativeFactoryDelegate = ShareExtensionReactNativeFactoryDelegate()
+  private lazy var reactNativeFactory: RCTReactNativeFactory = {
+    reactNativeFactoryDelegate.dependencyProvider = RCTAppDependencyProvider()
+    return RCTReactNativeFactory(delegate: reactNativeFactoryDelegate)
+  }()
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let bridge: RCTBridge! = RCTBridge(delegate: self, launchOptions: nil)
-    let rootView = RCTRootView(
-      bridge: bridge,
-      moduleName: "ShareMenuModuleComponent",
-      initialProperties: nil
+    let rootView = reactNativeFactory.rootViewFactory.view(
+      withModuleName: "ShareMenuModuleComponent",
+      initialProperties: nil,
+      launchOptions: nil
     )
 
     rootView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)

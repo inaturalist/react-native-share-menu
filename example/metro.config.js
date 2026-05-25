@@ -1,29 +1,32 @@
+const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
 
-// metro.config.js
-//
-// with multiple workarounds for this issue with symlinks:
-// https://github.com/facebook/metro/issues/1
-//
-// with thanks to @johnryan (<https://github.com/johnryan>)
-// for the pointers to multiple workaround solutions here:
-// https://github.com/facebook/metro/issues/1#issuecomment-541642857
-//
-// see also this discussion:
-// https://github.com/brodybits/create-react-native-module/issues/232
+/**
+ * Metro configuration
+ * https://reactnative.dev/docs/metro
+ *
+ * @type {import('@react-native/metro-config').MetroConfig}
+ */
 
-const path = require('path')
+const path = require('path');
+const pak = require('../package.json');
 
-module.exports = {
-  // workaround for an issue with symlinks encountered starting with
-  // metro@0.55 / React Native 0.61
-  // (not needed with React Native 0.60 / metro@0.54)
+const root = path.resolve(__dirname, '..');
+
+const modules = Object.keys({
+  ...pak.peerDependencies,
+});
+
+const config = {
+  projectRoot: __dirname,
+  watchFolders: [root],
+  // We need to make sure that only one version is loaded for peerDependencies
+  // So we block them at the root, and alias them to the versions in example's node_modules
   resolver: {
-    extraNodeModules: new Proxy(
-      {},
-      { get: (_, name) => path.resolve('.', 'node_modules', name) }
-    )
+    extraNodeModules: modules.reduce((acc, name) => {
+      acc[name] = path.join(__dirname, 'node_modules', name);
+      return acc;
+    }, {}),
   },
+};
 
-  // quick workaround for another issue with symlinks
-  watchFolders: ['.', '..']
-}
+module.exports = mergeConfig(getDefaultConfig(__dirname), config);
