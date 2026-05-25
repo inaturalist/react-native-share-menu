@@ -75,7 +75,7 @@
     "react-native": "0.83.9",
     "react-native-builder-bob": "^0.20.0",
     "release-it": "^17.10.0",
-    "typescript": "^4.5.2"
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "react": ">=19.1.0",
