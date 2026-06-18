@@ -82,7 +82,6 @@
     "@types/react": "^19.2.0",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-ft-flow": "^3.0.11",
     "eslint-plugin-prettier": "^5.5.4",
     "jest": "^28.1.1",
     "pod-install": "^0.1.0",
